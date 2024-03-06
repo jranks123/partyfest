@@ -134,6 +134,7 @@ h2, h3, h4 {
   width: 300px;
 }
 
+
 .info-section {
     background-color: black;
     color: white;
@@ -185,6 +186,10 @@ body {
    font-family: 'ComicSansMS3';
    cursor: pointer;
    transition: background-color 0.3s ease, transform 0.3s ease;
+ }
+
+ button .perform {
+    background-color: white; 
  }
 
  #emailForm button:hover, a:hover {
