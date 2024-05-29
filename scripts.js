@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
         images[currentImageIndex].style.opacity = 1;
     }
       //comments
-    setInterval(changeImage, 6500); // Change image every 6.5 seconds to account for the longer transition
+    setInterval(changeImage, 3500); // Change image every 6.5 seconds to account for the longer transition
 
 
 
