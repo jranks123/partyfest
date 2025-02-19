@@ -1,254 +1,119 @@
-@font-face {
-    font-family: 'Maputo';
-    src: url('fonts/Maputo.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+body {
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: white;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    padding: 20px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+.nav-links li {
+    margin: 0 15px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: white;
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
+.bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px;
+}
+.mobile-menu {
+    padding-top: 60px;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(1, 1, 1, 1);
+    transition: right 0.3s;
+}
+.mobile-menu.active {
+    right: 0;
 }
 
-@font-face {
-    font-family: 'ComicSansMS3';
-    src: url('fonts/ComicSansMS3.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
 }
 
-
-.text-background {
-    background-color: rgba(255, 255, 255, 1);
-    padding: 0.2em 0.4em; /* adjust padding as needed */
+.mobile-menu li {
+    display: block;
+    height: 100px;
+    line-height: 30px;
+    font-weight: bold;    
+}
+.close {
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+.hero {
+    text-align: center;
+    padding: 50px;
+}
+.cta-button {
+    display: inline-block;
+    padding: 15px 25px;
+    margin: 10px;
+    width: 160px;
+    background-color: #f04e30;
+    color: white;
+    text-decoration: none;
     border-radius: 5px;
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'ComicSansMS3', 'Courier New';
-
-    overflow-x: hidden; /* This will prevent horizontal scrolling */
+.pc_logo {
+    height: 60px;
 }
 
-body {
-   background-color: black;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   height: 100vh;
-   margin: 0;
+.section1 { 
+    background-color: beige;    
+    color: black;
 }
 
-h2, h3 {
-  font-family: 'ComicSansMS3';
+.section2 { 
+    color: #121212;
 }
 
-
-.container {
-    position: relative;
-    height: 560px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+.section2 { 
+    background-color:gainsboro;    
+    color: #121212;
 }
 
-.carousel {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 560px;
-    width: 100%;
-    overflow: hidden;
+.content-section {
+    padding: 30px 20px ;    
+    text-align: center;    
 }
 
-.carousel::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* adjust the 0.4 value as needed */
-    z-index: 2; /* to ensure overlay is above the images but below the text */
-}
-
-.carousel-image {
-    height: 560px;
-    width: 100%;  /* Change from 100vw to 100% */
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    z-index: 0;
-    transition: opacity 2s ease;
-}
-
-
-.party-text {
-  z-index: 200;
-  background: linear-gradient(45deg, #FC466B, #3F5EFB, #05DFD7, #F3A953, #FC466B);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-
-h1, h2, h3, h4 {
-  color: #FFFFFF;
-  text-shadow:
-   -2px -2px 0 #000,
-    2px -2px 0 #000,
-   -2px 2px 0 #000,
-    2px 2px 0 #000;
-    margin-left: 10px;
-    margin-right: 10px;
-
-}
-
-h1 {
-    font-size: 3rem;
-    margin-bottom: 40px; /* Give a margin to separate from the h2 */
-    z-index: 2;
-}
-
-h2, h3, h4 {
-    font-size: 2rem;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    z-index: 2;
-}
-
-.carousel-image.active {
-    opacity: 1;
-    z-index: 1;
-}
-
-
-
-.payment-button {
-  width: 300px;
-}
-
-
-.info-section {
-    background-color: black;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    font-size: 1.5rem;
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 4;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-#emailForm {
-  z-index: 55;
-   display: flex;
-   flex-direction: column;
-  margin-top: 40px;
- }
-
- #emailForm label,
- #emailForm input,
- #emailForm button, a {
-   margin-bottom: 15px; /* Adjust spacing between elements */
- }
-
- #emailForm input {
-   border: 2px solid #6a5acd;
-   border-radius: 5px;
-   padding: 10px;
-   font-size: 16px; /* Adjust input text size */
- }
-
- #emailForm button, a {
-   padding: 10px 20px;
-   font-size: 16px;
-   background-color: #6a5acd; /* Modern purple */
-   color: white;
-   border: none;
-   border-radius: 5px;
-   text-decoration:none;
-   font-weight: normal;
-   font-family: 'ComicSansMS3';
-   cursor: pointer;
-   transition: background-color 0.3s ease, transform 0.3s ease;
- }
-
- button .perform {
-    background-color: white; 
- }
-
- #emailForm button:hover, a:hover {
-   background-color: #483d8b; /* Darker shade on hover */
-   transform: translateY(-2px); /* Slight lift effect */
- }
-
- #thankYouMessage {
-   display: none;
-   margin-top: 20px; /* Spacing above the thank you message */
-   font-size: 18px;
- }
-
-.container, .info-section {
-    width: 100%;
-}
-
-
-@media screen and (max-width: 600px) {
-    .container, .info-section {
-        padding: 10px; /* Add padding */
-    }
-
-    #emailForm {
-        width: 100%; /* Set form width to 100% */
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center-align the items */
-    }
-
-
-}
-
-@media screen and (min-width: 768px) {
-
-  h1 {
-      font-size: 7rem;
-      z-index: 2;
-  }
-
-  h2, h3, h4 {
-      font-size: 3rem;
-      z-index: 2;
-  }
-
-
-    .container {
-        height: 692px;
-    }
-    .carousel, .carousel-image {
-        height: 692px;
-    }
-
-
-    #emailForm {
-      flex-direction: row; /* Align children side by side */
-      justify-content: space-around; /* Distribute space arou*/
-      align-items: center; /* This will vertically center the items */
-
-        gap: 15px;
-
-    }
+li {
+    list-style-type: none !important; 
+    display: block;
 }
