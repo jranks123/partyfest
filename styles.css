@@ -43,7 +43,7 @@ body {
     margin: 5px;
 }
 .mobile-menu {
-    padding-top: 60px;
+    padding-top: 50px;
     position: fixed;
     top: 0;
     right: -100%;
@@ -91,7 +91,7 @@ body {
 }
 
 .pc_logo {
-    height: 60px;
+    height: 50px;
 }
 
 .section1 { 
