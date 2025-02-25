@@ -172,7 +172,9 @@ li {
     flex-direction: column;
 }
 
-
+footer {
+    margin-left: 10px;
+}
 
 html {
     scroll-behavior: smooth;
