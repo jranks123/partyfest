@@ -28,6 +28,9 @@ body {
     flex-direction: column;
     cursor: pointer;
 }
+
+
+
 @media screen and (max-width: 768px) {
     .nav-links {
         display: none;
@@ -82,10 +85,6 @@ body {
     right: 20px;
     cursor: pointer;
 }
-.hero {
-    text-align: center;
-    padding: 50px;
-}
 
 .ticketlink {
     display: flex;
@@ -94,7 +93,7 @@ body {
 }
 
 .pf-poster {        
-    max-height: 400px;
+    width: 90%;
 }
 
 .cta-button {
@@ -113,25 +112,43 @@ body {
     height: 50px;
 }
 
+.firsttwosections {
+    display: flex;
+    flex-direction: row;
+}
+
+
 .section1 { 
     background-color: beige;    
     color: black;
+    width: 65%;
 }
+
+.section0 {
+    text-align: center;
+    padding: 50px;
+    width: 35%;
+}
+
 
 .ticket-list {
     padding: 0;
 }
 
-.ticket-list-item {
-    display: flex;
-    flex-direction: row;
-}
+
 .main-info {
     max-width: 600px;
     margin: 0 auto;  /* This centers the block horizontally */
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.tickt-section-div {
+    margin: 0 auto;  /* This centers the block horizontally */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 
 .agenda {
     text-align: left;
@@ -146,9 +163,11 @@ body {
     color: #121212;
 }
 
+
+
 .content-section {
     padding: 30px 20px ;    
-    text-align: left;
+    
 }
 
 ul { 
@@ -164,11 +183,15 @@ li {
     padding: 20px;
     background-color: #FAF9F6;
     margin: 10px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #ticket-table {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 footer {
@@ -177,4 +200,57 @@ footer {
 
 html {
     scroll-behavior: smooth;
+}
+
+@media (max-width: 457px) {
+    .pf-poster{
+        width: 90%;
+    }
+}
+
+
+@media (max-width: 1166px) {
+    .section1 { 
+        width: 100%;
+    }
+    .section0 { 
+        width: 100%;
+    }
+
+    .pf-poster {        
+        width: 411px;
+    }
+
+    .firsttwosections {
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #ticket-table {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .tickt-section-div {
+        width: 90%;
+    }
+
+    .ticketsection {
+        width: 90%;
+    }
+
+
+    .package {
+        border: 1px solid;
+        padding: 20px;
+        background-color: #FAF9F6;
+        margin: 10px;
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
