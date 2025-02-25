@@ -202,11 +202,6 @@ html {
     scroll-behavior: smooth;
 }
 
-@media (max-width: 457px) {
-    .pf-poster{
-        width: 90%;
-    }
-}
 
 
 @media (max-width: 1166px) {
@@ -252,5 +247,11 @@ html {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+    }
+}
+
+@media (max-width: 457px) {
+    .pf-poster{
+        width: 90%;
     }
 }
