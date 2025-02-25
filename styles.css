@@ -93,9 +93,8 @@ body {
     margin: 0 auto;  
 }
 
-.pf-poster {
-    width: 80%;
-    max-width: 600px;
+.pf-poster {        
+    max-height: 400px;
 }
 
 .cta-button {
