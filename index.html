@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://github.com/jranks123/partyfest/blob/main/img/pfposter.jpeg" />
+    
     <title>PartyCorp</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="scripts.js"></script>
@@ -35,7 +37,7 @@
     
     <header class="hero">                
         <img class="pf-poster" src="img/pfposter.jpeg" alt="PartyCorp Logo">
-        <a href="#ticket-table" class="cta-button">Buy Tickets</a>
+        <a href="#ticketsection" class="cta-button">Buy Tickets</a>
 
     </header>
 
@@ -74,46 +76,26 @@
         </div>
     </section>
 
-    <section class="content-section section2">
+    <section class="content-section section2" id="ticketsection">
         <div class="main-info"> 
-
-        <table id="ticket-table">
-            <caption>
-              Fig 1. Packages, prices and descriptions 
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">Package Type</th>
-                <th scope="col">Price</th>
-                <th scope="col">Includes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">
-                    
-                    Standard
-
-                </th>
-                <td>£9.99</td>
-                <td>     
+        <h1>Please choose from the following packages:</h1>
+        <div id="ticket-table">
+                <div class="package">
+                    <h3>
+                        Standard - £9.99
+                    </h3>  
                     Entry, plus:                       
                     <ul>
                         <li> 👔 role within the company</li>                        
                         <li> 🏷️ name sticker (please bring your own pen to write on name)</li>
                     </ul>                    
-                    <a href="tickets.html" class="cta-button ticket-button">Buy now</a>
+                    <a href="tickets.html" class="cta-button ">Buy now</a>
 
-
-                </td>                
-              </tr>
-              <tr>
-                <th scope="row">
-                    Gold 
-
-                </th>
-                <td>£14.99</td>
-                <td>    
+                </div>
+                <div class="package">
+                    <h3>
+                        Gold - £14.99
+                    </h3>  
                     Everything included in standard onboarding, plus:                        
                     <ul>
                         <li>🎗 Receive a unique lanyard and role within the company</li>
@@ -123,15 +105,12 @@
                     </ul>
                     <a href="tickets.html" class="cta-button ticket-button">Buy now</a>
 
-                </td>
-                           
-              </tr>
-              <tr>
-                <th scope="row">
-                    C-Suite
-                </th>
-                <td>£299.95</td>
-                <td>   
+                </div>
+
+                <div class="package">
+                    <h3>
+                        C-Suite - £299
+                    </h3>                    
                     Everything included in gold package, plus:                               
                     <ul>
                         <li>⬅️ Access to front left</li>
@@ -142,17 +121,7 @@
                     </ul>
                     <a href="tickets.html" class="cta-button ticket-button">Buy now</a>
 
-                </td>
-                       
-              </tr>             
-            </tbody>
-            <tfoot>
-                <tr>
-                  <th scope="row" colspan="1">Average price</th>
-                  <td>£108.31</td>
-                </tr>
-              </tfoot>
-          </table>
+                </div>
           </div>
         </section>
     <footer>
