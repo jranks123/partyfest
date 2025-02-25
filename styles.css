@@ -51,6 +51,10 @@ body {
     height: 100vh;
     background-color: rgba(1, 1, 1, 1);
     transition: right 0.3s;
+
+    li::before {
+        content: "🐻 ";
+      }
 }
 .mobile-menu.active {
     right: 0;
@@ -68,6 +72,9 @@ body {
     line-height: 30px;
     font-weight: bold;    
 }
+
+
+
 .close {
     font-size: 30px;
     position: absolute;
@@ -79,11 +86,25 @@ body {
     text-align: center;
     padding: 50px;
 }
+
+.ticketlink {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;  
+}
+
+.pf-poster {
+    width: 80%;
+    max-width: 600px;
+}
+
 .cta-button {
-    display: inline-block;
+    display: block;
+    text-align: center;
     padding: 15px 25px;
-    margin: 10px;
-    width: 160px;
+    margin-left: 0px;
+    margin-top: 10px;
+    width: 100px; 
     background-color: #f04e30;
     color: white;
     text-decoration: none;
@@ -99,6 +120,25 @@ body {
     color: black;
 }
 
+.ticket-list {
+    padding: 0;
+}
+
+.ticket-list-item {
+    display: flex;
+    flex-direction: row;
+}
+.main-info {
+    max-width: 600px;
+    margin: 0 auto;  /* This centers the block horizontally */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.agenda {
+    text-align: left;
+}
+
 .section2 { 
     color: #121212;
 }
@@ -110,10 +150,60 @@ body {
 
 .content-section {
     padding: 30px 20px ;    
-    text-align: center;    
+    text-align: left;
 }
 
+ul { 
+    text-align: left;
+}
 li {
     list-style-type: none !important; 
     display: block;
 }
+
+
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    width: auto ;
+  }
+  
+  td {
+    text-align: left;
+  }
+  caption {
+    caption-side: bottom;
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+  thead,
+  tfoot {
+    background-color: rgb(228 240 245);
+  }
+  
+  th,
+  td {
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 10px;
+  }
+  
+  td:last-of-type {
+    text-align: left;
+  }
+  
+  tbody > tr:nth-of-type(even) {
+    background-color: rgb(237 238 242);
+  }
+  
+  tfoot th {
+    text-align: right;
+  }
+  
+  tfoot td {
+    font-weight: bold;
+  }
