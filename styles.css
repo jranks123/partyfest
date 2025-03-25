@@ -1,16 +1,19 @@
 body {
     font-family: "Times New Roman", Times, serif;
     margin: 0;
-    padding: 0;
     background-color: #121212;
     color: white;
 }
-.navbar {
+.nav-content {
+    margin: 0px 20px;
+    padding: 10px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.navbar {
     background-color: #222;
-    padding: 20px;
+    width: 100%;    
 }
 .nav-links {
     list-style: none;
@@ -46,7 +49,6 @@ body {
     margin: 5px;
 }
 .mobile-menu {
-    padding-top: 50px;
     position: fixed;
     top: 0;
     right: -100%;
@@ -65,7 +67,6 @@ body {
 
 .mobile-menu ul {
     list-style: none;
-    padding: 0;
     text-align: center;
 }
 
@@ -93,14 +94,14 @@ body {
 }
 
 .pf-poster {        
-    width: 90%;
+    width: 75%;
 }
 
 .cta-button {
     display: block;
     text-align: center;
     padding: 15px 25px;
-    margin: 10px auto 0 auto; /* top margin 10px, left/right auto */
+    margin: 10px auto 10px auto; /* top margin 10px, left/right auto */
     width: 100px;
     background-color: #f04e30;
     color: white;
@@ -126,27 +127,26 @@ body {
 
 .section0 {
     text-align: center;
-    padding: 50px;
     width: 35%;
 }
 
 
-.ticket-list {
-    padding: 0;
-}
 
 
-.main-info {
+
+.main-info-container {
+    align-items: left;
     max-width: 600px;
     margin: 0 auto;  /* This centers the block horizontally */
-    padding-left: 10px;
-    padding-right: 10px;
+}
+
+.main-info {
+    margin-left: 20px;    
+    margin-right: 20px;    
 }
 
 .tickt-section-div {
     margin: 0 auto;  /* This centers the block horizontally */
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 
@@ -156,18 +156,16 @@ body {
 
 .section2 { 
     color: #121212;
-}
-
-.section2 { 
     background-color:gainsboro;    
-    color: #121212;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 
 
 .content-section {
-    padding: 30px 20px ;    
-    
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 ul { 
@@ -192,7 +190,14 @@ li {
 #ticket-table {
     display: flex;
     flex-direction: row;
+    margin-left: 20px;
+    margin-right: 20px;
 }
+
+.header-text {
+    margin-left: 20px;
+    margin-right: 20px; 
+ }
 
 footer {
     margin-left: 10px;
@@ -210,6 +215,13 @@ html {
 
 
 @media (max-width: 1166px) {
+    body {
+        width: 100%;
+    }
+    .content-section {
+        width: 100%;
+    }
+
     .section1 { 
         width: 100%;
     }
@@ -222,6 +234,7 @@ html {
     }
     
     .firsttwosections {
+        width: 100%;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -234,13 +247,7 @@ html {
 
     }
 
-    .tickt-section-div {
 
-    }
-
-    .ticketsection {
-
-    }
 
 
     .package {

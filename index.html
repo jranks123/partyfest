@@ -13,18 +13,20 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">
-            <img class="pc_logo" src="img/pclogo.png" alt="PartyCorp Logo">
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <!-- <li><a href="info.html">Info</a></li>
-            <li><a href="about.html">About</a></li> -->
-        </ul>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+        <div class="nav-content">
+            <div class="logo">
+                <img class="pc_logo" src="img/pclogo.png" alt="PartyCorp Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <!-- <li><a href="info.html">Info</a></li>
+                <li><a href="about.html">About</a></li> -->
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </div>
     </nav>
     
@@ -45,8 +47,9 @@
         </div>
 
         <div class="content-section section1">
-            <div class="main-info"> 
+            <div class="main-info-container"> 
 
+                <div class="main-info"> 
                 <h1> Welcome to PARTYCORP</h1>
                 <p>
                 Congratulations! You have been officially selected to join our growing team at partyfest headquarters, following our recent and highly successful acquisition by PartyCorp™.</p>
@@ -71,7 +74,7 @@
 
                 <a href="#ticketsection" class="cta-button">Buy Tickets</a>
 
-
+                </div>
             </div>
         </div>
     </div>
@@ -80,11 +83,11 @@
 
     <div class="content-section section2" id="ticketsection">
         
-        <h1>Please choose from the following packages:</h1>
+        <h1 class="header-text">Please choose from the following packages:</h1>
         <div id="ticket-table">
                 <div class="package">
                     <h3>
-                        Party Intern - £9.99
+                        Party Intern EARLYBIRD - £9.99
                     </h3>  
                     Entry, plus:                       
                     <ul>
