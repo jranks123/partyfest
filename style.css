@@ -71,7 +71,7 @@ body {
     #payment-container { padding: 30px 10px; width: 95%; }
     .landing-subtitle { font-size: 14px; }
     button { padding: 15px; font-size: 16px; }
-    .button-container { gap: 12px; }
+    .button-container { gap: 12px; } /* Smaller gap for mobile */
 }
 
 @media (max-width: 380px) {
@@ -87,47 +87,112 @@ body {
 }
 
 .container {
-    background: white; padding: 40px; border-radius: 30px;
+    background: white; padding: 60px 40px; border-radius: 30px;
     border: 5px solid black; text-align: center; max-width: 500px;
     width: 90%; z-index: 100; display: none; flex-direction: column; gap: 20px;
 }
 
 .container.show { display: flex; animation: pop-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 
-/* The container that holds the three buttons */
+/* Added this to create the gaps between buttons */
 .button-container {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Spacing between buttons */
+    gap: 20px; /* The gap between buttons */
     width: 100%;
 }
 
 button {
-    width: 100%; padding: 20px; border-radius: 15px; border: 4px solid black;
-    font-family: inherit; font-size: 18px; font-weight: 800; cursor: pointer;
+    width: 100%; padding: 25px 20px; border-radius: 15px; border: 4px solid black;
+    font-family: inherit; font-size: 20px; font-weight: 800; cursor: pointer;
     background: white; box-shadow: 0 6px 0px #000;
 }
 
-/* Ticket Color variations */
-.early-bird-btn { background: #ff4757; color: white; animation: urgent-pulse 2s infinite; }
-.early-bird-btn .price { color: #ffeaa7; }
 .normal-btn { background: #FFE66D; }
 .premium-btn { background: linear-gradient(90deg, #ff9a9e, #fad0c4); }
 
 .price {
     display: block;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: normal;
     margin-top: 5px;
 }
 
-@keyframes urgent-pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-}
 @keyframes fly-across { from { right: -100%; } to { right: 100%; } }
 @keyframes pop-in { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 @keyframes scroll-to-center {
     0% { top: 120%; transform: translate(-50%, 0); }
     100% { top: 50%; transform: translate(-50%, -50%); }
+}
+
+
+
+/* PARTY CHAOS OVERLAY */
+.party-chaos-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ffcc00, #ff0066);
+    background-size: 400% 400%;
+    animation: gradientShift 0.5s linear infinite;
+    color: white;
+    text-align: center;
+}
+
+.chaos-content h1 {
+    font-size: 8vw;
+    font-family: 'Arial Black', sans-serif;
+    text-shadow: 8px 8px 0px #000;
+    transform: rotate(-5deg);
+    animation: textPunch 0.2s ease-in-out infinite alternate;
+}
+
+.chaos-icon {
+    font-size: 100px;
+    display: block;
+    animation: spinIcon 0.4s linear infinite;
+}
+
+/* SCREEN BOUNCE (BASS BOOST) */
+.bass-boost {
+    animation: bassShake 0.15s infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes textPunch {
+    from { transform: rotate(-5deg) scale(1); }
+    to { transform: rotate(5deg) scale(1.2); }
+}
+
+@keyframes spinIcon {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes bassShake {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px) scale(1.02); }
+    100% { transform: translateY(0); }
+}
+
+/* Pulse for Early Bird Button */
+.early-bird-btn {
+    background: #ff4757;
+    color: white;
+    animation: partyPulse 1s infinite;
+}
+
+@keyframes partyPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); background: #ff6b81; }
+    100% { transform: scale(1); }
 }

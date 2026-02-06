@@ -32,24 +32,23 @@
         </h1>
         <p class="subtitle">yes</p>
         
-        <div class="button-container">
-            <button class="early-bird-btn" onclick="handlePayment('early', event)">
-                🏃‍♂️ EARLY BIRD (RUN!)
-                <span class="price">$29 - ONLY 4 LEFT!!</span>
-            </button>
+    <div class="button-container">
+        <button class="early-bird-btn" onclick="handlePayment('early', event, 'https://buy.stripe.com/8x27sKafh45DcmLgHhfjG0a')">
+            🏃‍♂️ EARLY BIRD (RUN!)
+            <span class="price">£79 - only 25!</span>
+        </button>
 
-            <button class="normal-btn" onclick="handlePayment('normal', event)">
-                bog standard (we love you) 😊
-                <span class="price">$49 - cheapest festival ticket ever</span>
-            </button>
+        <button class="normal-btn" onclick="handlePayment('normal', event, 'https://buy.stripe.com/cNi28qevxdGddqP3UvfjG0b')">
+            normal ticket(we love you) 😊
+            <span class="price">£99 - cheapest festival ticket you'll get this year (probably)</span>
+        </button>
 
-            <button class="premium-btn" onclick="handlePayment('premium', event)">
-                I'm a big playaaaaa ✨
-                <span class="price">$199 - fancy pants edition</span>
-            </button>
-        </div>
-        
-        <p class="footer">no refunds, only vibes 🌈</p>
+        <button class="premium-btn" onclick="handlePayment('premium', event, 'https://buy.stripe.com/9B6cN45Z1by50E33UvfjG0c')">
+            pay it forward
+            <span class="price">£119 -  cause i'm a legend and wanna support independent festivals✨</span>
+        </button>
+    </div>
+        <p class="footer"> 🌈</p>
     </div>
 
     <div class="grass-foreground"></div>
