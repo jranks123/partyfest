@@ -2,8 +2,9 @@ let isRevealed = false;
 
 function revealPayment() {
     if (isRevealed) return; 
+    
     isRevealed = true;
-
+    startBackgroundDrift();
     const sound = document.getElementById('click-sound');
     if (sound) sound.play().catch(e => console.log("Audio play blocked: ", e));
 
@@ -87,3 +88,26 @@ document.addEventListener('click', function(e) {
     
     setTimeout(() => particle.remove(), 1500);
 });
+
+function startBackgroundDrift() {
+    setInterval(() => {
+        const driftEmojis = ['✨', '☁️', '🌈', '🎈', '🕊️', '🌸'];
+        const p = document.createElement('div');
+        
+        p.className = 'background-drift';
+        p.textContent = driftEmojis[Math.floor(Math.random() * driftEmojis.length)];
+        
+        // Random horizontal start position
+        p.style.left = Math.random() * 100 + 'vw';
+        // Random size
+        p.style.fontSize = (Math.random() * 20 + 20) + 'px';
+        // Random speed
+        p.style.animationDuration = (Math.random() * 5 + 10) + 's';
+        // Make them slightly transparent
+        
+        document.body.appendChild(p);
+        
+        // Clean up after it floats away
+        setTimeout(() => p.remove(), 15000);
+    }, 1000); // Spawns one every 2 seconds
+}
