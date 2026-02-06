@@ -1,4 +1,10 @@
 /* rainbow.css */
+.rainbow-text {
+    display: inline-flex;
+    justify-content: center;
+    font-size: 100px; 
+}
+
 .rainbow-text span {
     font-size: 1em;
     -webkit-text-stroke: 2px black;
@@ -95,4 +101,30 @@
 @keyframes t-return-home {
     0%   { transform: translate(-1.25em, 0); }
     100% { transform: translate(0, 0); }
+}
+
+
+@media (max-width: 480px) {
+    .rainbow-text {
+        /* Bumped up from 44px to 54px */
+        font-size:76px !important; 
+        letter-spacing: -2px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .landing-logo {
+        width: 100%;
+        /* Ensure it has room to breathe */
+        padding: 0 5px; 
+    }
+
+    /* Make the dates and subtitle slightly larger to match */
+    .landing-dates {
+        font-size: 20px;
+    }
+    .landing-subtitle {
+        font-size: 16px;
+    }
 }
