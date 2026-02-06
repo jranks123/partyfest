@@ -28,52 +28,38 @@ function revealPayment() {
 }
 
 function handlePayment(type, event, url) {
-    event.preventDefault(); 
+    event.preventDefault();
     event.stopPropagation();
 
-    // 1. Create the Party Chaos Overlay
-    const flash = document.createElement('div');
-    flash.className = 'party-chaos-overlay';
-    
-    let text = 'SEE YOU IN THE MUD! 🤘';
-    if (type === 'early') text = 'SPEED DEMON! 🏃‍♂️💨';
-    if (type === 'premium') text = 'LEGEND STATUS: ACTIVE 💎';
-    
-    flash.innerHTML = `
-        <div class="chaos-content">
-            <span class="chaos-icon">🎸</span>
-            <h1>${text}</h1>
-            <span class="chaos-icon">🍻</span>
-        </div>
-    `;
-    document.body.appendChild(flash);
+    // LAUNCH THE BALLOON SHOWER
+    const balloonCount = 350; // Mass release
+    const emojis = ['🎈', '🎈', '🎈', '🎈', '✨', '💖'];
 
-    // 2. Trigger the Bass Boost (Screen Shake)
-    document.body.classList.add('bass-boost');
+    for (let i = 0; i < balloonCount; i++) {
+        const balloon = document.createElement('div');
+        balloon.className = 'mass-balloon';
+        balloon.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        
+        // Randomize horizontal start position
+        balloon.style.left = Math.random() * 100 + 'vw';
+        
+        // Randomize size
+        balloon.style.fontSize = (Math.random() * 30 + 30) + 'px';
+        
+        // Stagger the launch slightly for a "shower" effect
+        balloon.style.animationDelay = (Math.random() * 0.5) + 's';
+        
+        // Randomize how long they take to cross the screen (fast/slow)
+        balloon.style.animationDuration = (Math.random() * 1 + 1) + 's';
 
-    // 3. Redirect after 700ms (enough time to feel the hype)
+        document.body.appendChild(balloon);
+        
+        // Remove from DOM after animation
+        setTimeout(() => balloon.remove(), 3000);
+    }
+
+    // Redirect after the initial burst of balloons
     setTimeout(() => {
         window.location.href = url;
-    }, 700);
+    }, 1200);
 }
-
-// Confetti on click
-document.addEventListener('click', function(e) {
-    if (!isRevealed) return;
-    const emojis = ['🎉', '✨', '🕺', '🍦', '🎡'];
-    const confetti = document.createElement('div');
-    confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-    confetti.style.position = 'fixed';
-    confetti.style.left = e.clientX + 'px';
-    confetti.style.top = e.clientY + 'px';
-    confetti.style.fontSize = '50px';
-    confetti.style.pointerEvents = 'none';
-    confetti.style.zIndex = '20000';
-    confetti.style.animation = 'fall 1.5s ease-in forwards';
-    document.body.appendChild(confetti);
-    setTimeout(() => confetti.remove(), 1500);
-});
-
-const style = document.createElement('style');
-style.innerHTML = `@keyframes fall { to { transform: translateY(100vh) rotate(360deg); opacity: 0; } }`;
-document.head.appendChild(style);
