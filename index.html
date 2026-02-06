@@ -3,43 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PartyFest Payment</title>
+    <title>PartyFest 2026</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="rainbow.css">
 </head>
 <body onclick="revealPayment()">
     <div id="click-overlay"></div>
+    <audio id="click-sound" src="yay.mp3" preload="auto"></audio>
 
     <div class="sky-scene">
         <div class="plane-container">
             <div class="plane">🛩️</div>
-            <div class="banner">CLICK ANYWHERE TO CONTINUE</div>
+            <div class="banner">CLICK TO CONTINUE</div>
         </div>
     </div>
 
     <div class="landing-logo">
-        <h1>
-            
-            <span class="rainbow-text"><span>p</span><span>a</span><span>r</span><span>t</span><span>y</span><span>f</span><span>e</span><span>s</span><span>t</span></span> 
-            
+        <h1 class="rainbow-text">
+            <span>p</span><span>a</span><span>r</span><span>t</span><span>y</span><span>f</span><span>e</span><span>s</span><span>t</span>
         </h1>
         <p class="landing-dates">24th - 26th july</p>
-        
         <p class="landing-subtitle">shepton mallet i.e basically glastonbury</p>
     </div>
 
-    
-
     <div class="container" id="payment-container">
-        <h1>
-            <span class="rainbow-text"><span>p</span><span>a</span><span>r</span><span>t</span><span>y</span><span>f</span><span>e</span><span>s</span><span>t</span></span>
+        <h1 class="rainbow-text">
+            <span>p</span><span>a</span><span>r</span><span>t</span><span>y</span><span>f</span><span>e</span><span>s</span><span>t</span>
         </h1>
-        <p class="subtitle">yes </p>
-
+        <p class="subtitle">yes</p>
+        
         <div class="button-container">
+            <button class="early-bird-btn" onclick="handlePayment('early', event)">
+                🏃‍♂️ EARLY BIRD (RUN!)
+                <span class="price">$29 - ONLY 4 LEFT!!</span>
+            </button>
+
             <button class="normal-btn" onclick="handlePayment('normal', event)">
-                bog standard (we love you) <span class="wiggle">😊</span>
-                <span class="price">$49 - cheapest festival ticket you'll buy this year</span>
+                bog standard (we love you) 😊
+                <span class="price">$49 - cheapest festival ticket ever</span>
             </button>
 
             <button class="premium-btn" onclick="handlePayment('premium', event)">
@@ -47,9 +48,11 @@
                 <span class="price">$199 - fancy pants edition</span>
             </button>
         </div>
+        
         <p class="footer">no refunds, only vibes 🌈</p>
     </div>
-<div class="grass-foreground"></div>
+
+    <div class="grass-foreground"></div>
     <script src="script.js"></script>
-<audio id="click-sound" src="yay.mp3" preload="auto"></audio></body>
+</body>
 </html>

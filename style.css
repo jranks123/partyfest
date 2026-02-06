@@ -11,6 +11,7 @@ body {
     font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
+/* --- SKY & PLANE --- */
 .sky-scene {
     position: fixed;
     top: 10%;
@@ -40,6 +41,7 @@ body {
     width: 15px; height: 2px; background: black;
 }
 
+/* --- LOGO CONTAINER --- */
 .landing-logo {
     position: absolute;
     text-align: center;
@@ -55,7 +57,7 @@ body {
 .rainbow-text {
     display: inline-flex;
     justify-content: center;
-    font-size: 72px; /* Master control for EM units */
+    font-size: 72px; 
 }
 
 /* --- RESPONSIVE SCALING --- */
@@ -69,6 +71,7 @@ body {
     #payment-container { padding: 30px 10px; width: 95%; }
     .landing-subtitle { font-size: 14px; }
     button { padding: 15px; font-size: 16px; }
+    .button-container { gap: 12px; }
 }
 
 @media (max-width: 380px) {
@@ -76,6 +79,7 @@ body {
     #payment-container .rainbow-text { font-size: 34px; }
 }
 
+/* --- UI ELEMENTS --- */
 .grass-foreground {
     position: fixed; bottom: 0; left: 0; width: 100%; height: 25vh;
     background: linear-gradient(to bottom, #2ecc71, #27ae60);
@@ -83,22 +87,44 @@ body {
 }
 
 .container {
-    background: white; padding: 60px 40px; border-radius: 30px;
+    background: white; padding: 40px; border-radius: 30px;
     border: 5px solid black; text-align: center; max-width: 500px;
     width: 90%; z-index: 100; display: none; flex-direction: column; gap: 20px;
 }
 
 .container.show { display: flex; animation: pop-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 
+/* The container that holds the three buttons */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between buttons */
+    width: 100%;
+}
+
 button {
-    width: 100%; padding: 25px 20px; border-radius: 15px; border: 4px solid black;
-    font-family: inherit; font-size: 20px; font-weight: 800; cursor: pointer;
+    width: 100%; padding: 20px; border-radius: 15px; border: 4px solid black;
+    font-family: inherit; font-size: 18px; font-weight: 800; cursor: pointer;
     background: white; box-shadow: 0 6px 0px #000;
 }
 
+/* Ticket Color variations */
+.early-bird-btn { background: #ff4757; color: white; animation: urgent-pulse 2s infinite; }
+.early-bird-btn .price { color: #ffeaa7; }
 .normal-btn { background: #FFE66D; }
 .premium-btn { background: linear-gradient(90deg, #ff9a9e, #fad0c4); }
 
+.price {
+    display: block;
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+@keyframes urgent-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
 @keyframes fly-across { from { right: -100%; } to { right: 100%; } }
 @keyframes pop-in { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 @keyframes scroll-to-center {
