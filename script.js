@@ -1,10 +1,9 @@
 let isRevealed = false;
-
+startBackgroundDrift();
 function revealPayment() {
     if (isRevealed) return; 
     
-    isRevealed = true;
-    startBackgroundDrift();
+    isRevealed = true;    
     const sound = document.getElementById('click-sound');
     if (sound) sound.play().catch(e => console.log("Audio play blocked: ", e));
 
@@ -32,34 +31,40 @@ function handlePayment(type, event, url) {
     event.preventDefault();
     event.stopPropagation();
 
-    // LAUNCH THE BALLOON SHOWER
-    const balloonCount = 350; // Mass release
-    const emojis = ['🎈', '🎈', '🎈', '🎈', '✨', '💖'];
+    const balloonCount = 400; 
+    let showerEmojis = [];
+    
+    // THEMED EMOJI LOGIC
+    if (type === 'early') {
+        // The "Early Bird" shower
+        showerEmojis = ['🐦', '🐤', '🐣', '🕊️', '💨'];
+    } else if (type === 'premium') {
+        // The "Big Playaaaa" money shower
+        showerEmojis = ['🤑', '💸', '💰', '💵', '💎', '✨'];
+    } else {
+        // The standard "Normal" shower
+        showerEmojis = ['🎈', '✨', '💖', '🎡', '🍦'];
+    }
 
     for (let i = 0; i < balloonCount; i++) {
         const balloon = document.createElement('div');
         balloon.className = 'mass-balloon';
-        balloon.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        balloon.textContent = showerEmojis[Math.floor(Math.random() * showerEmojis.length)];
         
-        // Randomize horizontal start position
         balloon.style.left = Math.random() * 100 + 'vw';
-        
-        // Randomize size
         balloon.style.fontSize = (Math.random() * 30 + 30) + 'px';
         
-        // Stagger the launch slightly for a "shower" effect
+        // Randomize the flight paths slightly for more chaos
         balloon.style.animationDelay = (Math.random() * 0.5) + 's';
-        
-        // Randomize how long they take to cross the screen (fast/slow)
-        balloon.style.animationDuration = (Math.random() * 1 + 1) + 's';
+        balloon.style.animationDuration = (Math.random() * 1.2 + 0.6) + 's'; 
 
         document.body.appendChild(balloon);
         
         // Remove from DOM after animation
-        setTimeout(() => balloon.remove(), 3000);
+        setTimeout(() => balloon.remove(), 2000);
     }
 
-    // Redirect after the initial burst of balloons
+    // Give them a second to enjoy the themed shower before the redirect
     setTimeout(() => {
         window.location.href = url;
     }, 1200);
