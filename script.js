@@ -63,3 +63,27 @@ function handlePayment(type, event, url) {
         window.location.href = url;
     }, 1200);
 }
+
+// 1. THE RETURN OF THE RANDOM CLICK EMOJIS
+document.addEventListener('click', function(e) {
+    if (!isRevealed) return;
+
+    const clickEmojis = ['🎉', '✨', '🎈', '💖', '🤘', '🌈', '🍦'];
+    const particle = document.createElement('div');
+    
+    particle.textContent = clickEmojis[Math.floor(Math.random() * clickEmojis.length)];
+    particle.style.position = 'fixed';
+    particle.style.left = e.clientX + 'px';
+    particle.style.top = e.clientY + 'px';
+    particle.style.fontSize = '40px';
+    particle.style.pointerEvents = 'none';
+    particle.style.zIndex = '2000000'; // Make sure it's on top of everything
+    particle.style.userSelect = 'none';
+    
+    // Using a specific animation for the individual clicks
+    particle.style.animation = 'clickPop 1.5s ease-out forwards';
+    
+    document.body.appendChild(particle);
+    
+    setTimeout(() => particle.remove(), 1500);
+});
