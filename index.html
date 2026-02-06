@@ -3,136 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://github.com/jranks123/partyfest/blob/main/img/pfposter.png?raw=true" />
-    <meta property="og:title" content="PARTYCORP presents partyfest: first day at work" />
-    <meta property="og:description" content="Get your onboarding day ticket NOW" />
-    
-    <title>PartyCorp</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="scripts.js"></script>
+    <title>PartyFest 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rainbow.css">
 </head>
-<body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">
-                <img class="pc_logo" src="img/pclogo.png" alt="PartyCorp Logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <!-- <li><a href="info.html">Info</a></li>
-                <li><a href="about.html">About</a></li> -->
-            </ul>
-            <div class="hamburger" onclick="toggleMenu()">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-        </div>
-    </nav>
-    
-    <div class="mobile-menu">
-        <span class="close" onclick="toggleMenu()">&times;</span>
-        <ul>
-            <li><a href="index.html" onclick="closeMenu()">Home</a></li>
-            <!-- <li><a href="info.html" onclick="closeMenu()">Info</a></li>
-            <li><a href="about.html" onclick="closeMenu()">About</a></li> -->
-        </ul>
-    </div>
-    
-    <div class="firsttwosections">
-        <div class="content-section section0">                
-            <img class="pf-poster" src="img/pfposter.png" alt="PartyCorp Logo">     
-            <a href="#ticketsection" class="cta-button">Buy Tickets</a>
-       
-        </div>
+<body onclick="revealPayment()">
+    <div id="click-overlay"></div>
+    <audio id="click-sound" src="yay.mp3" preload="auto"></audio>
 
-        <div class="content-section section1">
-            <div class="main-info-container"> 
-
-                <div class="main-info"> 
-                <h1> Welcome to PARTYCORP</h1>
-                <p>
-                Congratulations! You have been officially selected to join our growing team at partyfest headquarters, following our recent and highly successful acquisition by PartyCorp™.</p>
-                
-                <p>We are truly excited to welcome you into this next chapter of high-performance synergy, disruptive innovation, and—above all—unparalleled immersive experiences.</p>
-                
-                
-                <p><em>OUR VISION: WORK HARD, PLAY HARD</em></p>
-                
-                <p>At PartyCorp™, we believe in work-life integration and dynamic, high-energy collaboration.</p>
-                
-                <p>Your first day will include:</p>
-                <div class="agenda">
-                    <ul>
-                        <li>  &#9989; <em>World-class</em> DJs and live music </li>
-                        <li>  &#9989; <em>Engaging</em> breakout rooms to explore company culture</li>
-                        <li>  &#9989; <em>Fun</em> ice-breakers and meet and greets with stakeholders </li>
-                        <li>  &#9989; <em>Mandatory</em> compliance training </li>
-                    </ul>
-                </div>
-                Please arrive promptly at 11pm on 23rd May in corporate attire (interpret however you like) and click above to pay for and book your onboarding experience.
-
-                <a href="#ticketsection" class="cta-button">Buy Tickets</a>
-
-                </div>
-            </div>
+    <div class="sky-scene">
+        <div class="plane-container">
+            <div class="plane">🛩️</div>
+            <div class="banner">CLICK TO CONTINUE</div>
         </div>
     </div>
 
+    <div class="landing-logo">
+        <h1 class="rainbow-text">
+            <span>p</span><span>a</span><span>r</span><span>t</span><span>y</span><span>f</span><span>e</span><span>s</span><span>t</span>
+        </h1>
+        <p class="landing-dates">24th - 26th july</p>
+        <p class="landing-subtitle">shepton mallet i.e basically glastonbury</p>
+    </div>
 
-
-    <div class="content-section section2" id="ticketsection">
+    <div class="container" id="payment-container">
+        <h1 class="rainbow-text">
+            <span>p</span><span>a</span><span>r</span><span>t</span><span>y</span><span>f</span><span>e</span><span>s</span><span>t</span>
+        </h1>
+        <p class="subtitle">yes</p>
         
-        <h1 class="header-text">Please choose from the following packages:</h1>
-        <div id="ticket-table">
-                <div class="package">
-                    <h3>
-                        Party Intern EARLYBIRD - £9.99
-                    </h3>  
-                    Entry, plus:                       
-                    <ul>
-                        <li> 👔 role within the company</li>                        
-                        <li> 🏷️ name sticker (please bring your own pen to write on name)</li>
-                    </ul>                    
-                    <a href="https://buy.stripe.com/cN2aHMcOaf4Jck8006" target="_blank" class="cta-button ">Buy now</a>
-                </div>
-                <div class="package">
-                    <h3>
-                        Senior Party Manager - £14.99
-                    </h3>  
-                    Everything included in standard onboarding, plus:                        
-                    <ul>
-                        <li>🎗 Bespoke lanyard</li>
-                        <li>🎧 Meet the DJ's</li>
-                        <li>⏳ 15 minutes more party time</li>
-                        <li><em>💜 this is basically a ticket plus £5 donation to partyfest cause your a big money playa and wanna support independent events and you love us</em></li>
-                    </ul>
-                    <a href="https://buy.stripe.com/5kAcPUeWig8N0Bq9AI" target="_blank" class="cta-button ticket-button">Buy now</a>
+        <div class="button-container">
+            <button class="early-bird-btn" onclick="handlePayment('early', event)">
+                🏃‍♂️ EARLY BIRD (RUN!)
+                <span class="price">$29 - ONLY 4 LEFT!!</span>
+            </button>
 
-                </div>
+            <button class="normal-btn" onclick="handlePayment('normal', event)">
+                bog standard (we love you) 😊
+                <span class="price">$49 - cheapest festival ticket ever</span>
+            </button>
 
-                <div class="package">
-                    <h3>
-                        Chief Party Officer - £299
-                    </h3>                    
-                    Everything included in gold package, plus:                               
-                    <ul>
-                        <li>⬅️ Access to front left</li>
-                        <li>🏅 Golden lanyard</li>
-                        <li>📈 Shares in partycorp</li>
-                        <li>🖼️ partycorp NFT</li>
-                        <li>⛓️ fartypest necklace</li>
-                    </ul>
-                    <a href="https://buy.stripe.com/3cs3fkeWi4q53NC5kt" target="_blank" class="cta-button ticket-button">Buy now</a>
-
-                </div>
-            </div>
+            <button class="premium-btn" onclick="handlePayment('premium', event)">
+                I'm a big playaaaaa ✨
+                <span class="price">$199 - fancy pants edition</span>
+            </button>
+        </div>
+        
+        <p class="footer">no refunds, only vibes 🌈</p>
     </div>
-    <footer>
-        <p>&copy; 2025 PartyCorp. All rights reserved.</p>
-    </footer>
 
-
-    </script>
+    <div class="grass-foreground"></div>
+    <script src="script.js"></script>
 </body>
 </html>
