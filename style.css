@@ -1,14 +1,5 @@
 /* style.css */
 
-/* 1. FONT DEFINITION - Ensures Comic Sans vibe works on Chrome/iPhone */
-@font-face {
-    font-family: 'Comic Sans Custom';
-    src: local('Comic Sans MS'), 
-         local('Comic Sans'), 
-         url('https://fonts.gstatic.com/s/comicneue/v8/4UaHr6SAn9bc97J96dfQ1mxzOQ.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-}
 
 * { 
     margin: 0; 
@@ -25,7 +16,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Comic Sans Custom', 'Comic Sans MS', 'Comic Sans', cursive;
+    font-family: 'Comic Neue', sans-serif !important;
     position: relative;
     touch-action: manipulation; /* Prevents accidental zooming on mobile clicks */
 }

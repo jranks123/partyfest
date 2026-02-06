@@ -40,58 +40,59 @@
 .rainbow-text span:nth-child(9) { color: #FFD93D; }
 
 /* --- REFINED KEYFRAMES --- */
-
 @keyframes swap-p-mischief {
-    /* Shake: Building up to the jump */
     0%, 10%, 20%, 30%, 40% { transform: translate(0,0) rotate(2deg); }
     5%, 15%, 25%, 35%, 45% { transform: translate(0,0) rotate(-2deg); }
-    50%  { transform: translate(0,0) scaleY(0.8); } /* Crouch */
-    60%  { transform: translate(0, -1.4em) scaleY(1.1); } /* Leap */
-    85%  { transform: translate(2.55em, -1.4em); } 
-    95%  { transform: translate(2.55em, 0.1em) scaleY(0.7); } /* Land Squish */
-    100% { transform: translate(2.55em, 0) scaleY(1); } 
+    50%  { transform: translate(0,0) scaleY(0.8); } 
+    60%  { transform: translate(0, -1.4em) scaleY(1.1); } 
+    /* REDUCED: Was 2.55em, now 2.1em to account for wider letters */
+    85%  { transform: translate(2.1em, -1.4em); } 
+    95%  { transform: translate(2.1em, 0.1em) scaleY(0.7); } 
+    100% { transform: translate(2.1em, 0) scaleY(1); } 
 }
 
 @keyframes swap-f-reaction {
     0%, 88% { transform: translate(0,0); } 
-    90%  { transform: translate(0, 0.3em) scaleY(0.6); } /* Shoved down */
-    96%  { transform: translate(-2.55em, 0.3em); } 
-    100% { transform: translate(-2.55em, 0); } 
+    90%  { transform: translate(0, 0.3em) scaleY(0.6); } 
+    /* REDUCED: Was -2.55em, now -2.1em */
+    96%  { transform: translate(-2.1em, 0.3em); } 
+    100% { transform: translate(-2.1em, 0); } 
 }
 
 @keyframes t-to-front-mischief {
-    /* Shake: Anticipation */
     0%, 10%, 20%, 30% { transform: translate(0,0) translateX(0.05em); }
     5%, 15%, 25%, 35% { transform: translate(0,0) translateX(-0.05em); }
-    45% { transform: translate(0, 0) scaleY(0.7); } /* Crouch */
-    55% { transform: translate(0, -1.5em) scaleY(1.1); } /* Spring */
-    85% { transform: translate(-1.55em, -1.5em); }
-    95% { transform: translate(-1.55em, 0.1em) scaleY(0.7); } /* Stomp */
-    100% { transform: translate(-1.55em, 0) scaleY(1); }
+    45% { transform: translate(0, 0) scaleY(0.7); } 
+    55% { transform: translate(0, -1.5em) scaleY(1.1); } 
+    /* REDUCED: Was -1.55em, now -1.2em */
+    85% { transform: translate(-1.2em, -1.5em); }
+    95% { transform: translate(-1.2em, 0.1em) scaleY(0.7); } 
+    100% { transform: translate(-1.2em, 0) scaleY(1); }
 }
 
 @keyframes f-back-home-reaction {
-    0%, 45% { transform: translate(-2.55em, 0); }
-    50% { transform: translate(-2.55em, 0.2em) scaleY(0.8); } /* Flinch from T */
+    /* REDUCED: Was -2.55em, now -2.1em */
+    0%, 45% { transform: translate(-2.1em, 0); }
+    50% { transform: translate(-2.1em, 0.2em) scaleY(0.8); } 
     80% { transform: translate(0, 0.2em); } 
     100% { transform: translate(0, 0); }
 }
 
 @keyframes p-to-gap-mischief {
-    /* Bored Jiggle before jump */
-    0%, 20%, 40% { transform: translate(2.55em, 0) rotate(3deg); }
-    10%, 30%, 50% { transform: translate(2.55em, 0) rotate(-3deg); }
-    58% { transform: translate(2.55em, -1.1em); } 
-    85% { transform: translate(1.55em, -1.1em); } 
-    100% { transform: translate(1.55em, 0); }
+    0%, 20%, 40% { transform: translate(2.1em, 0) rotate(3deg); }
+    10%, 30%, 50% { transform: translate(2.1em, 0) rotate(-3deg); }
+    58% { transform: translate(2.1em, -1.1em); } 
+    /* REDUCED: Was 1.55em, now 1.25em */
+    85% { transform: translate(1.25em, -1.1em); } 
+    100% { transform: translate(1.25em, 0); }
 }
 
 @keyframes p-return-home {
-    0%   { transform: translate(1.55em, 0); }
+    0%   { transform: translate(1.25em, 0); }
     100% { transform: translate(0, 0); }
 }
 
 @keyframes t-return-home {
-    0%   { transform: translate(-1.55em, 0); }
+    0%   { transform: translate(-1.25em, 0); }
     100% { transform: translate(0, 0); }
 }
