@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #ffffff;
+    background-color: #87CEEB;
     overflow: hidden;
     /* dvh = Dynamic Viewport Height (Essential for iPhone Centering) */
     height: 100dvh; 
