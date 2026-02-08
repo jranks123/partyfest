@@ -18,23 +18,23 @@
 .rainbow-text span:nth-child(1) { 
     color: #FF6B6B; 
     animation: 
-        swap-p-mischief 4s ease-in-out 5s forwards,
-        p-to-gap-mischief 5s ease-in-out 13.5s forwards, 
-        p-return-home 2s ease-in-out 23s forwards;
+        swap-p-mischief 3.5s ease-in-out 4.5s forwards,
+        p-to-gap-mischief 4.5s ease-in-out 13s forwards, 
+        p-return-home 2s ease-in-out 20s forwards;
 }
 
 .rainbow-text span:nth-child(4) { 
     color: #A8E6CF; 
     animation: 
-        t-to-front-mischief 3.5s ease-in-out 12.5s forwards,
-        t-return-home 2s ease-in-out 23s forwards;
+        t-to-front-mischief 3.5s ease-in-out 12s forwards,
+        t-return-home 1.5s ease-in-out 20s forwards;
 }
 
 .rainbow-text span:nth-child(6) { 
     color: #FFE66D; 
     animation: 
-        swap-f-reaction 4s ease-in-out 5s forwards,
-        f-back-home-reaction 4s ease-in-out 13.5s forwards;
+        swap-f-reaction 3.5s ease-in-out 4.5s forwards,
+        f-back-home-reaction 3.5s ease-in-out 13s forwards;
 }
 
 /* Static Rainbow Colors */
