@@ -106,73 +106,81 @@
 
 /* --- CONSOLIDATED FULL SEQUENCE ANIMATIONS (22s each) --- */
 @keyframes p-full-sequence {
-    /* 0-4.5s (0-20.45%): idle/wiggle */
-    0%, 0.8%, 1.59%, 2.39%, 3.18% { transform: translate(0,0) rotate(2deg); }
-    0.4%, 1.19%, 1.99%, 2.78%, 3.58% { transform: translate(0,0) rotate(-2deg); }
+    /* 0-3.5s: completely idle */
+    0%, 15.91% { transform: translate(0,0); }
+
+    /* 3.5-4.5s: gentle wiggle (2 wiggles in 1 second) */
+    16.5% { transform: translate(0,0) rotate(2deg); }
+    17.5% { transform: translate(0,0) rotate(-2deg); }
+    18.5% { transform: translate(0,0) rotate(2deg); }
+    19.5% { transform: translate(0,0) rotate(-2deg); }
     20.45% { transform: translate(0,0); }
 
-    /* 4.5-8s (20.45-36.36%): swap-p-mischief - 3.5s phase */
-    /* Original: 0%, 10%, 20%, 30%, 40% at +2deg, 5%, 15%, 25%, 35%, 45% at -2deg */
-    20.45%, 22.05%, 23.64%, 25.23%, 26.82% { transform: translate(0,0) rotate(2deg); }
-    21.25%, 22.84%, 24.43%, 25.03%, 27.62% { transform: translate(0,0) rotate(-2deg); }
-    /* 50% */
+    /* 4.5-8s (20.45-36.36%): jump and move right - 3.5s phase */
+    /* Map original 0-100% to 20.45-36.36% (15.91% range) */
+    /* 0%, 10%, 20%, 30%, 40% */
+    20.45%, 22.04%, 23.64%, 25.23%, 26.82% { transform: translate(0,0) rotate(2deg); }
+    /* 5%, 15%, 25%, 35%, 45% */
+    21.25%, 22.84%, 24.43%, 26.03%, 27.62% { transform: translate(0,0) rotate(-2deg); }
+    /* 50% - squish */
     28.41% { transform: translate(0,0) scaleY(0.8); }
-    /* 60% */
-    30% { transform: translate(0, -1.4em) scaleY(1.1); }
-    /* 85% */
-    34.3% { transform: translate(2.1em, -1.4em); }
-    /* 95% */
-    35.68% { transform: translate(2.1em, 0.1em) scaleY(0.7); }
-    /* 100% */
+    /* 60% - jump */
+    30.00% { transform: translate(0, -1.4em) scaleY(1.1); }
+    /* 85% - move right */
+    33.97% { transform: translate(2.1em, -1.4em); }
+    /* 95% - land squish */
+    35.57% { transform: translate(2.1em, 0.1em) scaleY(0.7); }
+    /* 100% - settle */
     36.36% { transform: translate(2.1em, 0) scaleY(1); }
 
-    /* 8-13s (36.36-59.09%): hold at 2.1em */
+    /* 8-13s: hold at 2.1em */
     59.09% { transform: translate(2.1em, 0) scaleY(1); }
 
-    /* 13-17.5s (59.09-79.55%): p-to-gap-mischief - 4.5s phase */
-    /* Original: 0%, 20%, 40% at +3deg, 10%, 30%, 50% at -3deg */
+    /* 13-17.5s (59.09-79.55%): wiggle and move to gap - 4.5s phase */
+    /* Map original 0-100% to 59.09-79.55% (20.46% range) */
+    /* 0%, 20%, 40% */
     59.09%, 63.18%, 67.27% { transform: translate(2.1em, 0) rotate(3deg); }
+    /* 10%, 30%, 50% */
     61.14%, 65.23%, 69.32% { transform: translate(2.1em, 0) rotate(-3deg); }
-    /* 58% */
-    71% { transform: translate(2.1em, -1.1em); }
-    /* 85% */
-    76.5% { transform: translate(1.25em, -1.1em); }
-    /* 100% */
+    /* 58% - jump up */
+    70.96% { transform: translate(2.1em, -1.1em); }
+    /* 85% - move to gap */
+    76.48% { transform: translate(1.25em, -1.1em); }
+    /* 100% - settle */
     79.55% { transform: translate(1.25em, 0); }
 
     /* 17.5-20s (79.55-90.91%): hold at 1.25em */
     90.91% { transform: translate(1.25em, 0); }
 
-    /* 20-22s (90.91-100%): p-return-home */
+    /* 20-22s (90.91-100%): return home */
     100% { transform: translate(0, 0); }
 }
 
 @keyframes t-full-sequence {
-    /* 0-12s (0-54.55%): idle/tiny wiggle */
-    0%, 0.8%, 1.59%, 2.39% { transform: translate(0,0) translateX(0.05em); }
-    0.4%, 1.19%, 1.99%, 2.78% { transform: translate(0,0) translateX(-0.05em); }
-    54.55% { transform: translate(0,0); }
+    /* 0-12s (0-54.55%): completely idle, no movement */
+    0%, 54.55% { transform: translate(0,0); }
 
-    /* 12-15.5s (54.55-70.45%): t-to-front-mischief - 3.5s phase */
-    /* Original: 0%, 10%, 20%, 30% at +0.05em, 5%, 15%, 25%, 35% at -0.05em */
+    /* 12-15.5s (54.55-70.45%): jump and move left - 3.5s phase */
+    /* Map original 0-100% to 54.55-70.45% (15.9% range) */
+    /* 0%, 10%, 20%, 30% */
     54.55%, 56.14%, 57.73%, 59.32% { transform: translate(0,0) translateX(0.05em); }
+    /* 5%, 15%, 25%, 35% */
     55.34%, 56.93%, 58.52%, 60.11% { transform: translate(0,0) translateX(-0.05em); }
-    /* 45% */
+    /* 45% - squish */
     61.68% { transform: translate(0, 0) scaleY(0.7); }
-    /* 55% */
+    /* 55% - jump */
     63.27% { transform: translate(0, -1.5em) scaleY(1.1); }
-    /* 85% */
+    /* 85% - move left */
     68.05% { transform: translate(-1.2em, -1.5em); }
-    /* 95% */
+    /* 95% - land squish */
     69.77% { transform: translate(-1.2em, 0.1em) scaleY(0.7); }
-    /* 100% */
+    /* 100% - settle */
     70.45% { transform: translate(-1.2em, 0) scaleY(1); }
 
-    /* 15.5-20s (70.45-90.91%): hold at -1.2em */
+    /* 15.5-20s: hold at -1.2em */
     90.91% { transform: translate(-1.2em, 0); }
 
-    /* 20-21.5s (90.91-97.73%): t-return-home */
-    /* 21.5-22s (97.73-100%): hold at home */
+    /* 20-22s: return home (t-return-home) */
     100% { transform: translate(0, 0); }
 }
 
@@ -180,29 +188,29 @@
     /* 0-4.5s (0-20.45%): idle */
     0%, 20.45% { transform: translate(0,0); }
 
-    /* 4.5-8s (20.45-36.36%): swap-f-reaction - 3.5s phase */
-    /* Original: 0%, 88% idle, 90% squish, 96% move, 100% settle */
-    /* 88% of phase */
-    34.55% { transform: translate(0,0); }
-    /* 90% */
-    34.87% { transform: translate(0, 0.3em) scaleY(0.6); }
-    /* 96% */
-    35.82% { transform: translate(-2.1em, 0.3em); }
-    /* 100% */
+    /* 4.5-8s (20.45-36.36%): get squished and move left - 3.5s phase */
+    /* Map original 0-100% to 20.45-36.36% (15.91% range) */
+    /* 88% - still idle */
+    34.45% { transform: translate(0,0); }
+    /* 90% - squish */
+    34.77% { transform: translate(0, 0.3em) scaleY(0.6); }
+    /* 96% - move */
+    35.72% { transform: translate(-2.1em, 0.3em); }
+    /* 100% - settle */
     36.36% { transform: translate(-2.1em, 0); }
 
     /* 8-13s (36.36-59.09%): hold at -2.1em */
     59.09% { transform: translate(-2.1em, 0); }
 
-    /* 13-16.5s (59.09-75%): f-back-home-reaction - 3.5s phase */
-    /* Original: 0%, 45% hold, 50% squish, 80% move, 100% home */
-    /* 45% of phase */
-    66.27% { transform: translate(-2.1em, 0); }
-    /* 50% */
+    /* 13-16.5s (59.09-75%): bounce back home - 3.5s phase */
+    /* Map original 0-100% to 59.09-75% (15.91% range) */
+    /* 45% - hold */
+    66.25% { transform: translate(-2.1em, 0); }
+    /* 50% - squish */
     67.05% { transform: translate(-2.1em, 0.2em) scaleY(0.8); }
-    /* 80% */
+    /* 80% - move */
     71.82% { transform: translate(0, 0.2em); }
-    /* 100% */
+    /* 100% - home */
     75% { transform: translate(0, 0); }
 
     /* 16.5-22s (75-100%): hold at home */
