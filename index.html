@@ -50,14 +50,14 @@
         <p class="subtitle">yes</p>
         
     <div class="button-container">
-        <button class="early-bird-btn" onclick="handlePayment('early', event, 'https://buy.stripe.com/8x27sKafh45DcmLgHhfjG0a')">
-            🏃‍♂️ EARLY BIRD (RUN!)
-            <span class="price">£79 - 48H HOURS ONLY!!!!</span>
+        <button class="early-bird-btn" onclick="event.stopPropagation();" disabled>
+            🐌 EARLY BIRD (too slow lol)
+            <span class="price">SOLD OUT - you snooze you lose bestie 💤</span>
         </button>
 
         <button class="normal-btn" onclick="handlePayment('normal', event, 'https://buy.stripe.com/cNi28qevxdGddqP3UvfjG0b')">
-            normal ticket(we love you) 😊
-            <span class="price">£99 - cheapest festival ticket you'll get this year (probably)</span>
+            FASHIONABLY LATE BIRD 😊
+            <span class="price">£99 - cheapest festival ticket you'll get this year (probably) </br> You might not have made the early bird but what loser gets to the party early anyway</span>
         </button>
 
         <button class="premium-btn" onclick="handlePayment('premium', event, 'https://buy.stripe.com/9B6cN45Z1by50E33UvfjG0c')">
