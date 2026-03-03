@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>partyfest 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rainbow.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎈</text></svg>">
+    <meta name="description" content="is it a party is it a festival who cares">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jranks123.github.io/partyfest/">
+    <meta property="og:title" content="partyfest 2026">
+    <meta property="og:description" content="is it a party is it a festival who cares">
+    <meta property="og:image" content="https://jranks123.github.io/partyfest/img/partyfes.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jranks123.github.io/partyfest/">
+    <meta property="twitter:title" content="partyfest 2026">
+    <meta property="twitter:description" content="is it a party is it a festival who cares">
+    <meta property="twitter:image" content="https://jranks123.github.io/partyfest/img/partyfest.jpg">
+</head>
+<body onclick="revealPayment()">
+    <div id="click-overlay"></div>
+    <audio id="click-sound" src="wand.mp3" preload="auto"></audio>
+
+    <div class="sky-scene">
+        <div class="plane-container">
+            <div class="plane">🛩️</div>
+            <div class="banner">CLICK TO CONTINUE</div>
+        </div>
+    </div>
+
+    <div class="landing-logo">
+        <h1 class="rainbow-text">
+            <span>p</span><span>a</span><span>r</span><span>t</span><span>y</span><span>c</span><span>o</span><span>r</span><span>p</span>
+        </h1>
+        <p class="landing-dates">IT'S OFFICIAL</p>
+        <p class="landing-subtitle">Company number: 17064601</p>
+    </div>
+
+    <div class="container" id="payment-container">
+        <h1 class="rainbow-text">
+            <span>p</span><span>a</span><span>r</span><span>t</span><span>y</span><span>f</span><span>e</span><span>s</span><span>t</span>
+        </h1>
+        <p class="subtitle">yes</p>
+        
+    <div class="button-container">
+        <button class="early-bird-btn" onclick="event.stopPropagation();" disabled>
+            🐌 EARLY BIRD (too slow lol)
+            <span class="price">SOLD OUT - you snooze you lose bestie 💤</span>
+        </button>
+
+        <button class="normal-btn" onclick="handlePayment('normal', event, 'https://buy.stripe.com/cNi28qevxdGddqP3UvfjG0b')">
+            FASHIONABLY LATE BIRD 😊
+            <span class="price">£99 - cheapest festival ticket you'll get this year (probably) </br> you might not have made the early bird but what loser gets to the party early anyway</span>
+        </button>
+
+        <button class="premium-btn" onclick="handlePayment('premium', event, 'https://buy.stripe.com/9B6cN45Z1by50E33UvfjG0c')">
+            pay it forward
+            <span class="price">£119 -  cause i'm a legend and wanna support independent festivals✨</span>
+        </button>
+    </div>
+        <p class="footer"> 🌈</p>
+    </div>
+
+    <div class="grass-foreground"></div>
+    <script src="script.js"></script>
+</body>
+</html>
