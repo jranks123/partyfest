@@ -3,58 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PartyCorp</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="scripts.js"></script>
+    <title>partyfest 2026 — info</title>
+    <link rel="stylesheet" href="rainbow.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎈</text></svg>">
+    <meta name="description" content="everything you need to know about partyfest 2026">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #87CEEB;
+            min-height: 100dvh;
+            font-family: 'Comic Neue', sans-serif;
+            color: #1a1a1a;
+            padding: 30px 20px 120px;
+            position: relative;
+        }
+
+        .grass-foreground {
+            position: fixed; bottom: 0; left: 0; width: 100%; height: 12vh;
+            background: linear-gradient(to bottom, #2ecc71, #27ae60);
+            z-index: 1; border-top: 10px solid #27ae60;
+            pointer-events: none;
+        }
+
+        .page {
+            max-width: 640px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* shrink the rainbow header a touch for this page */
+        .header .rainbow-text { font-size: 64px; }
+        @media (max-width: 480px) {
+            .header .rainbow-text { font-size: 56px !important; }
+        }
+
+        .dates {
+            text-align: center;
+            font-weight: 700;
+            font-size: 22px;
+            margin-bottom: 4px;
+        }
+
+        .place {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 26px;
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-weight: 700;
+            font-size: 30px;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+            -webkit-text-stroke: 1.5px black;
+            text-shadow: 2px 2px 0 #000;
+        }
+        .section-title .where { color: #4ECDC4; }
+        .section-title .when { color: #FF9FF3; }
+        .section-title .what { color: #FFE66D; }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .info-item {
+            background: white;
+            border: 4px solid black;
+            border-radius: 18px;
+            padding: 18px 20px;
+            box-shadow: 0 6px 0px #000;
+        }
+
+        .info-item h2 {
+            font-size: 20px;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            line-height: 1.3;
+        }
+
+        .info-item p {
+            margin-top: 8px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .info-item a {
+            color: #c0392b;
+            font-weight: 700;
+        }
+
+        .highlight {
+            background: #FFE66D;
+            animation: pulse 1.4s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.015); }
+        }
+
+        .friday-note {
+            text-align: center;
+            font-weight: 700;
+            font-size: 17px;
+            margin: 28px 0 10px;
+        }
+
+        .back {
+            display: block;
+            width: max-content;
+            margin: 24px auto 0;
+            background: white;
+            border: 4px solid black;
+            border-radius: 15px;
+            box-shadow: 0 6px 0px #000;
+            padding: 14px 28px;
+            font-weight: 800;
+            font-size: 16px;
+            text-decoration: none;
+            color: black;
+            transition: transform 0.1s;
+        }
+        .back:active { transform: translateY(4px); box-shadow: 0 2px 0px #000; }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="image.png" alt="PartyCorp Logo">
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="info.html">Info</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="tickets.html">Tickets</a></li>
-        </ul>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-    </nav>
-    
-    <div class="mobile-menu">
-        <span class="close" onclick="toggleMenu()">&times;</span>
-        <ul>
-            <li><a href="index.html" onclick="closeMenu()">Home</a></li>
-            <li><a href="info.html" onclick="closeMenu()">Info</a></li>
-            <li><a href="about.html" onclick="closeMenu()">About</a></li>
-            <li><a href="tickets.html" onclick="closeMenu()">Tickets</a></li>
-        </ul>
-    </div>
-    
-    <header class="hero">
-        <h1>Welcome to PartyFest</h1>
-        <p>The ultimate party experience</p>
-        <a href="tickets.html" class="cta-button">Get Tickets</a>
-    </header>
-    
-    <section class="content-section">
-        <h2>Our Mission</h2>
-        <p>Bringing unforgettable music, lights, and energy to every event.</p>
-    </section>
-    
-    <section class="content-section">
-        <h2>Stay Updated</h2>
-        <p>Follow us on social media for the latest updates.</p>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 PartyCorp. All rights reserved.</p>
-    </footer>
+    <div class="grass-foreground"></div>
 
-    </script>
+    <div class="page">
+        <div class="header">
+            <h1 class="rainbow-text">
+                <span>p</span><span>a</span><span>r</span><span>t</span><span>y</span><span>f</span><span>e</span><span>s</span><span>t</span>
+            </h1>
+        </div>
+        <p class="dates">24th – 26th july 2026</p>
+        <p class="place">i.e basically glastonbury</p>
+
+        <!-- WHERE -->
+        <div class="section">
+            <h2 class="section-title">📍 <span class="where">where</span></h2>
+            <div class="info-list">
+                <div class="info-item">
+                    <h2>New location near Glastonbury</h2>
+                    <p><strong>Penny Square Barn</strong><br>Batcombe, Shepton Mallet, BA4 6AB</p>
+                    <p>what3words: <strong>angel.fists.thundered</strong> — <a href="https://maps.app.goo.gl/CnD1pXGoErSQhmM29" target="_blank" rel="noopener">open in maps</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- WHEN -->
+        <div class="section">
+            <h2 class="section-title">📅 <span class="when">when</span></h2>
+            <div class="info-list">
+                <div class="info-item highlight">
+                    <h2>💫 Gates open 3pm Friday 24th July</h2>
+                    <p>Take the day off work, gather your companions and get there early — the Friday is going to be 💫</p>
+                </div>
+
+                <div class="info-item">
+                    <h2>Sunday acts into the evening</h2>
+                </div>
+
+                <div class="info-item">
+                    <h2>Stay 'til Monday</h2>
+                    <p>No rush — you're welcome to stay on site until Monday. Recover, pack up slowly, savour it.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- WHAT -->
+        <div class="section">
+            <h2 class="section-title">🎪 <span class="what">what</span></h2>
+            <div class="info-list">
+                <div class="info-item">
+                    <h2>🌀 A theme!</h2>
+                    <p>Embrace your most enchanted self: goblins, pipers, witches, mythical creatures, fell beasts, fairytales and folkloric fiends... take it as you wish.</p>
+                </div>
+
+                <div class="info-item">
+                    <h2>🌀 Super secret special guest headliner 🐶</h2>
+                </div>
+
+                <div class="info-item">
+                    <h2>🌀 The Veil</h2>
+                    <p>A new ambient music space.</p>
+                </div>
+
+                <div class="info-item">
+                    <h2>🌀 An opening ritual</h2>
+                    <p>Expect FIRE 🔥</p>
+                </div>
+
+                <div class="info-item">
+                    <h2>🌀 New cabaret acts, bands and performers</h2>
+                    <p>Line up coming soon!</p>
+                </div>
+
+                <div class="info-item">
+                    <h2>🌀 Indoor rave barn</h2>
+                </div>
+
+                <div class="info-item">
+                    <h2>🌀 Clothes swap & second hand gifting</h2>
+                    <p>Details tba but start gathering your tat and old clothes...</p>
+                </div>
+
+                <div class="info-item">
+                    <h2>🌀 Beer on draught & a kitchen</h2>
+                    <p>With meals served all day.</p>
+                </div>
+            </div>
+        </div>
+
+        <a class="back" href="index.html">← back to home</a>
+    </div>
 </body>
 </html>

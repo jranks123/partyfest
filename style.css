@@ -35,7 +35,7 @@ body {
     display: flex;
     align-items: center;
     right: -100%; 
-    animation: fly-across 12s linear infinite;
+    animation: fly-across 24s linear infinite;
 }
 
 .plane { font-size: 50px; transform: scaleX(-1); }
@@ -63,6 +63,44 @@ body {
     animation-delay: 0.5s;
     white-space: nowrap;
 }
+
+/* --- LANDING BUTTONS --- */
+.landing-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+.landing-btn {
+    width: auto;
+    display: inline-block;
+    padding: 16px 30px;
+    border-radius: 15px;
+    border: 4px solid black;
+    background: white;
+    box-shadow: 0 6px 0px #000;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.1s;
+}
+
+.landing-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0px #000;
+}
+
+.tickets-btn {
+    background: #FFE66D;
+    animation: urgent-pulse 1s infinite;
+}
+
+.info-btn { background: #95E1D3; }
 
 /* --- UI ELEMENTS --- */
 .grass-foreground {
